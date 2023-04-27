@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>已知問題與限制</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="已知問題與限制" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/trident-2301/trident-docker/known-issues-docker.html" />
+	<meta property="og:description" content="尋找使用Astra Trident搭配Docker時已知問題的相關資訊。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/trident-2301/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="尋找使用Astra Trident搭配Docker時已知問題的相關資訊。">
+  <meta name="keywords" content=" known issues, trident, trident for docker, docker"><!-- Icons -->
+  <link rel="icon" href="/zh-tw/trident-2301/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/trident-2301/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/zh-tw/trident-2301/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/trident-2301/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/zh-tw/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/trident-2301/trident-docker/known-issues-docker.html" />
+  <link rel='stylesheet' href='/zh-tw/trident-2301/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/trident-2301/js/na-search.js'></script><script src='/zh-tw/trident-2301/js/na-pagenav.js'></script><script src='/zh-tw/trident-2301/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/zh-tw/trident-2301/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/trident-2301/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/zh-tw/trident-2301/js/na-utility.js'></script> -->
+  <script src='/zh-tw/trident-2301/js/clouddocs.js'></script>
+  <script src='/zh-tw/trident-2301/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src='/zh-tw/trident-2301/js/toc.js'></script> -->
+  <!-- <script src='/zh-tw/trident-2301/js/customscripts.js'></script> --><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/zh-tw/trident-2301"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/zh-tw/trident-2301/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/trident-2301/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/trident-2301/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/trident-2301/js/jszip.min.js'></script>
+  <!-- <script src='/zh-tw/trident-2301/js/pdf-ux.js'></script> -->
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
+  <div class="custom-dropdown-select unselected" title="Astra Trident 23.01">
+    <label>版本</label>
+    <span translate="no" class="notranslate">Astra Trident 23.01</span>
+    <img src="/zh-tw/trident-2301/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
+    <img src="/zh-tw/trident-2301/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
+  </div>
+
+  <ul class="custom-dropdown-menu"><li>
+      
+      <a href="https://docs.netapp.com/zh-tw/trident/trident-docker/known-issues-docker.html" target="_self">
+        <span translate="no" class="notranslate"><span>Astra Trident</span><span class="version"> 23.01</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/trident-2210/trident-docker/known-issues-docker.html" target="_self">
+        <span translate="no" class="notranslate"><span>Astra Trident</span><span class="version"> 22.10</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/trident-2207/trident-docker/known-issues-docker.html" target="_self">
+        <span translate="no" class="notranslate"><span>Astra Trident</span><span class="version"> 22.07</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/trident-2204/trident-docker/known-issues-docker.html" target="_self">
+        <span translate="no" class="notranslate"><span>Astra Trident</span><span class="version"> 22.04</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/trident-2201/trident-docker/known-issues-docker.html" target="_self">
+        <span translate="no" class="notranslate"><span>Astra Trident</span><span class="version"> 22.01</span></span>
+      </a>
+                     
+    </li>
+    
+  </ul>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/trident-2301/issues/new?body=Page%3A%20[已知問題與限制](https://docs.netapp.com/zh-tw/trident-2301/trident-docker/known-issues-docker.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/zh-tw/trident-2301/images/discuss-sm.svg" alt="" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/trident-2301/blob/main/trident-docker/known-issues-docker.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/trident-2301/images/edit-sm.svg" alt="" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/trident-2301/images/article-sm.svg" alt="" class="github-icon" />瞭解如何作出貢獻</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">在此頁面上</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">產品與解決方案</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">支援與訓練</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">社群</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">部落格</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">客戶成功案例</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">聯絡人</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/zh-tw/trident-2301/images/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/zh-tw/trident-2301/images/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/zh-tw/trident-2301/images/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/zh-tw/trident-2301/search.html"
+          data-type="widget" 
+          data-placeholder="搜尋文件"
+          data-no-results-found="找不到符合 {query} 的相關結果。"
+          data-did-you-mean="搜尋 {suggestion}。"
+          data-no-results-found-did-you-mean="找不到符合 {query} 的相關結果。您是否要找的是{suggestion}？"
+          data-results-found="找到 {hitCount} 筆結果"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/trident-2301/images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/trident-2301/images/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/es-es/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/trident-2301/trident-docker/known-issues-docker.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li></ul>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/zh-tw/trident-2301/images/collapse.png" alt="收合瀏覽面板"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>可用的 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/zh-tw/trident-2301/pdfs/fullsite-sidebar/Astra_Trident_23_01_1文件.pdf" >
+          <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>此文件網站（PDF 格式）</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/開始使用.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            開始使用
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/安裝Astra_Trident.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            安裝Astra Trident
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/使用Trident操作員安裝.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            使用Trident操作員安裝
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/使用tridentctl安裝.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            使用tridentctl安裝
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/管理Astra_Trident.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            管理Astra Trident
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/升級Astra_Trident.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            升級Astra Trident
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/使用Astra_Trident.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            使用Astra Trident
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/設定後端.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            設定後端
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/Azure_NetApp_Files.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            Azure NetApp Files
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/支援SAN驅動程式ONTAP.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            支援SAN驅動程式ONTAP
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/ASNAS驅動程式ONTAP.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            ASNAS驅動程式ONTAP
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/Amazon_FSX_for_NetApp_ONTAP_產品.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            Amazon FSX for NetApp ONTAP 產品
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/執行Volume作業.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            執行Volume作業
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/適合Docker的Astra_Trident.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            適合Docker的Astra Trident
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/使用Volume.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            使用Volume
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/最佳實務做法與建議.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            最佳實務做法與建議
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/安全性.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            安全性
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/trident-2301/pdfs/sidebar/參考資料.pdf" 
+            
+          >
+            <img src="/zh-tw/trident-2301/images/pdf.png" alt="" width="16" height="16"/>
+            參考資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/zh-tw/trident-2301/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>個別 PDF 文件的集合<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/zh-tw/astra-family/"><img src="/zh-tw/trident-2301/images/left_arrow.png" alt=""><pre>所有Astra文件</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Trident文件"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/index.html">
+        Astra Trident文件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="版本資訊"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-rn.html">
+        版本資訊
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="瞭解Astra Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/intro.html">
+        瞭解Astra Trident
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="驅動程式ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/ontap-drivers.html">
+        驅動程式ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="資源配置"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/provisioning.html">
+        資源配置
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Volume快照"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/snapshots.html">
+        Volume快照
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="虛擬資源池"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/virtual-storage-pool.html">
+        虛擬資源池
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Volume存取群組"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-concepts/vol-access-groups.html">
+        Volume存取群組
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始使用"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 開始使用</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="歡迎試用"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/quickstart.html">
+        歡迎試用
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="需求"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/requirements.html">
+        需求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝Astra Trident"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 安裝Astra Trident</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝總覽"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy.html">
+        安裝總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Trident操作員安裝"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 使用Trident操作員安裝</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="手動部署Trident運算子（標準）"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy-operator.html">
+        手動部署Trident運算子（標準）
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="手動部署Trident運算子（離線）"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy-operator-mirror.html">
+        手動部署Trident運算子（離線）
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Trident Helm圖表（標準）"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy-helm.html">
+        使用Trident Helm圖表（標準）
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Trident Helm圖表（離線）"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy-helm-mirror.html">
+        使用Trident Helm圖表（離線）
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自訂Trident操作員安裝"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-customize-deploy.html">
+        自訂Trident操作員安裝
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用tridentctl安裝"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 使用tridentctl安裝</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用tridentctl安裝"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-deploy-tridentctl.html">
+        使用tridentctl安裝
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自訂tridentctl安裝"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-customize-deploy-tridentctl.html">
+        自訂tridentctl安裝
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="接下來呢？"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-get-started/kubernetes-postdeployment.html">
+        接下來呢？
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理Astra Trident"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 管理Astra Trident</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級Astra Trident"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 升級Astra Trident</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級總覽"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-managing-k8s/upgrade-trident.html">
+        升級總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="與營運者一起升級"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-managing-k8s/upgrade-operator.html">
+        與營運者一起升級
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用tridentctl進行升級"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-managing-k8s/upgrade-tridentctl.html">
+        使用tridentctl進行升級
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="解除安裝Astra Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-managing-k8s/uninstall-trident.html">
+        解除安裝Astra Trident
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="降級Astra Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-managing-k8s/downgrade-trident.html">
+        降級Astra Trident
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Astra Trident"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 使用Astra Trident</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="準備工作節點"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/worker-node-prep.html">
+        準備工作節點
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定後端"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/zh-tw/trident-2301/trident-use/backends.html">
+        <div class="na-navbar-padding"> 設定後端</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure NetApp Files"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Azure NetApp Files</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="總覽"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/anf.html">
+        總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="準備進行設定"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/anf-prep.html">
+        準備進行設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="組態選項與範例"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/anf-examples.html">
+        組態選項與範例
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="適用於 Google Cloud Cloud Volumes Service"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/gcp.html">
+        適用於 Google Cloud Cloud Volumes Service
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="不含SolidFire NetApp HCI"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/element.html">
+        不含SolidFire NetApp HCI
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援SAN驅動程式ONTAP"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/zh-tw/trident-2301/trident-use/ontap-san.html">
+        <div class="na-navbar-padding"> 支援SAN驅動程式ONTAP</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="準備進行設定"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/ontap-san-prep.html">
+        準備進行設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="組態選項與範例"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/ontap-san-examples.html">
+        組態選項與範例
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ASNAS驅動程式ONTAP"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/zh-tw/trident-2301/trident-use/ontap-nas.html">
+        <div class="na-navbar-padding"> ASNAS驅動程式ONTAP</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="準備進行設定"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/ontap-nas-prep.html">
+        準備進行設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="組態選項與範例"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/ontap-nas-examples.html">
+        組態選項與範例
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Amazon FSX for NetApp ONTAP 產品"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Amazon FSX for NetApp ONTAP 產品</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="總覽"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/trident-fsx.html">
+        總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="整合Amazon FSX for ONTAP Sf"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/trident-fsx-prep.html">
+        整合Amazon FSX for ONTAP Sf
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="組態選項與範例"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/trident-fsx-examples.html">
+        組態選項與範例
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用kubecl建立後端"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/backend-kubectl.html">
+        使用kubecl建立後端
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="以KECBECVL執行後端管理"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/backend_ops_kubectl.html">
+        以KECBECVL執行後端管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用tridentctl執行後端管理"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/backend_ops_tridentctl.html">
+        使用tridentctl執行後端管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在後端管理選項之間切換"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/backend_options.html">
+        在後端管理選項之間切換
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理儲存類別"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/manage-stor-class.html">
+        管理儲存類別
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="執行Volume作業"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/zh-tw/trident-2301/trident-use/vol-operations.html">
+        <div class="na-navbar-padding"> 執行Volume作業</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用「csi拓撲」"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/csi-topology.html">
+        使用「csi拓撲」
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用快照"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/vol-snapshots.html">
+        使用快照
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="展開Volume"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/vol-expansion.html">
+        展開Volume
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="匯入磁碟區"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/vol-import.html">
+        匯入磁碟區
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="跨命名空間共用NFS磁碟區"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/volume-share.html">
+        跨命名空間共用NFS磁碟區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="監控Astra Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-use/monitor-trident.html">
+        監控Astra Trident
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="適合Docker的Astra Trident"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 適合Docker的Astra Trident</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署的先決條件"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/prereqs-docker.html">
+        部署的先決條件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署Astra Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/deploy-docker.html">
+        部署Astra Trident
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級或解除安裝Trident"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/upgrade-uninstall-docker.html">
+        升級或解除安裝Trident
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Volume"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/zh-tw/trident-2301/trident-docker/volumes-docker.html">
+        <div class="na-navbar-padding"> 使用Volume</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="驅動程式專屬的Volume選項"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/volume-driver-options.html">
+        驅動程式專屬的Volume選項
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="收集記錄"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/collect-logs-docker.html">
+        收集記錄
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理多個Astra Trident執行個體"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/multiple-instances-docker.html">
+        管理多個Astra Trident執行個體
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存組態選項"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/stor-config.html">
+        儲存組態選項
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="已知問題"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-docker/known-issues-docker.html">
+        已知問題
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="常見問題集"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/faq.html">
+        常見問題集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/get-help.html">
+        支援
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="疑難排解"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/troubleshooting.html">
+        疑難排解
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="最佳實務做法與建議"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 最佳實務做法與建議</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/deploy-reco.html">
+        部署
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存組態"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/storage-config-best-practices.html">
+        儲存組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Trident整合"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/integrate-trident.html">
+        Astra Trident整合
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="資料保護"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/backup.html">
+        資料保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安全性"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 安全性</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安全性建議"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/security-reco.html">
+        安全性建議
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Linux統一化金鑰設定（LUKS）"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reco/security-luks.html">
+        Linux統一化金鑰設定（LUKS）
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="參考資料"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> 參考資料</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Trident連接埠"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/ports.html">
+        Astra Trident連接埠
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Trident REST API"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/rest-api.html">
+        Astra Trident REST API
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="命令列選項"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/trident-cl.html">
+        命令列選項
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="與Kubernetes整合的NetApp產品"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/k8s-netapp.html">
+        與Kubernetes整合的NetApp產品
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kubernetes和Astra Trident物件"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/objects.html">
+        Kubernetes和Astra Trident物件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="tridentctl命令和選項"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/tridentctl.html">
+        tridentctl命令和選項
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Pod安全標準（PSS）與安全內容限制（SCC）"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/trident-reference/pod-security.html">
+        Pod安全標準（PSS）與安全內容限制（SCC）
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="舊版"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/earlier-versions.html">
+        舊版
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律聲明"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-tw/trident-2301/legal-notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/zh-tw/trident-2301/images/expand.png" alt="展開瀏覽面板"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/zh-tw/astra-family/">Astra</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/zh-tw/trident-2301/">Astra&nbsp;Trident</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/zh-tw/trident-2301/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">已知問題與限制</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2023-04-27 16:38:37 +0000">04/27/2023</time>
+    
+  
+
+<span>貢獻者
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>尋找使用Astra Trident搭配Docker時已知問題和限制的相關資訊。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="從舊版升級trident-docker-volume外掛程式至20-10及更新版本會導致升級失敗且不會發生此類檔案或目錄錯誤">從舊版升級Trident Docker Volume外掛程式至20.10及更新版本、會導致升級失敗、且不會發生此類檔案或目錄錯誤。</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">因應措施</div>
+<ol class="arabic">
+<li>
+<p>停用外掛程式。</p>
+<div class="listingblock">
+<div class="content">
+<pre>docker plugin disable -f netapp:latest</pre>
+</div>
+</div>
+</li>
+<li>
+<p>移除外掛程式。</p>
+<div class="listingblock">
+<div class="content">
+<pre>docker plugin rm -f netapp:latest</pre>
+</div>
+</div>
+</li>
+<li>
+<p>提供額外的、重新安裝外掛程式 <code>config</code> 參數。</p>
+<div class="listingblock">
+<div class="content">
+<pre>docker plugin install netapp/trident-plugin:20.10 --alias netapp --grant-all-permissions config=config.json</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="volume名稱長度必須至少2個字元">Volume名稱長度必須至少2個字元。</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/trident-2301/images/note.svg" alt="附註">
+</td>
+<td class="content">
+這是Docker用戶端的限制。用戶端會將單一字元名稱解譯為Windows路徑。 <a href="https://github.com/moby/moby/issues/25773" target="_blank" rel="noopener">"請參閱錯誤25773"</a>。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="docker-swarm具有某些行為可防止astra-trident在每個儲存設備和驅動程式組合中支援它">Docker swarm具有某些行為、可防止Astra Trident在每個儲存設備和驅動程式組合中支援它。</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Docker swarm目前使用Volume名稱、而非Volume ID做為其唯一的Volume識別碼。</p>
+</li>
+<li>
+<p>Volume要求會同時傳送至swarm叢集中的每個節點。</p>
+</li>
+<li>
+<p>Volume外掛程式（包括Astra Trident）必須在swarm叢集中的每個節點上獨立執行。因為功能不一ONTAP <code>ontap-nas</code> 和 <code>ontap-san</code> 驅動程式功能、是唯一能夠在這些限制範圍內運作的驅動程式。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>其餘的驅動程式可能會受到競爭狀況等問題的影響、導致在單一要求中建立大量磁碟區、而不需要明確的「贏家」；例如、Element的功能可讓磁碟區擁有相同名稱但不同ID。</p>
+</div>
+<div class="paragraph">
+<p>NetApp已向Docker團隊提供意見回饋、但沒有任何未來追索的跡象。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如果配置的是某個功能區則如果第二個功能區的一個或多個集合體與要配置的功能區相同則不提供第二個功能區flexgroup-ontap-flexgroup-flexgroup-flexgroup">如果配置的是某個功能區、則如果第二個功能區的一個或多個集合體與要配置的功能區相同、則不提供第二個功能區。FlexGroup ONTAP FlexGroup FlexGroup FlexGroup</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隱私權政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">傳送有關本網頁的意見反應</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/trident-2301/images/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/trident-2301/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/trident-2301/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/trident-2301/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/trident-2301/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/trident-2301/js/sidebar.js'></script>
+  </body></html>
