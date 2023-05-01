@@ -9,8 +9,11 @@ settings:
   rss_page: trident-rn.html
   versions:
   - name: Astra Trident
+    url: "/trident-2310"
+    version-number: '23.10'
+  - name: Astra Trident
     url: "/trident"
-    version-number: '23.01'
+    version-number: latest
   - name: Astra Trident
     url: "/trident-2210"
     version-number: '22.10'
