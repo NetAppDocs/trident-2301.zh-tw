@@ -414,14 +414,6 @@
   <block id="ee50d481128d1543f9945b4a4f3fbe9d" category="paragraph">對於空拍安裝、下列清單是安裝Astra Trident所需的容器映像參考資料。使用<block ref="4ebf280824868255c952dc529072ecb9" prefix=" " category="inline-code"></block> 用於驗證所需容器映像清單的命令。</block>
   <block id="aa92c4c233bc01609d957e469736b699" category="cell">Container映像</block>
   <block id="6f0b081bef5e745ef2429ef74472d9bd" category="cell">1.21.0版</block>
-  <block id="5e3673cc108f69c1b1e37872c6e40a61" category="list-text">NetApp/Trident：23.01.1</block>
-  <block id="9f523c82aa6c2773a498c832177d2ae0" category="list-text">NetApp/Trident自動支援：23.01</block>
-  <block id="3cfdc4b11ed575c2d8bbcea1746d0976" category="list-text">k8s.IO/SIG-storage / CSI-置 備程式：v3.4.0</block>
-  <block id="57ad3884258dc4fe04c11750b8222daa" category="list-text">k8s.io/sig-storage / csi附加程式：v4.1.0</block>
-  <block id="7f7b6bf613e5a94b472dc4003c3c9d47" category="list-text">k8s.io/sig-storage / csi大小調整：v1.7.0</block>
-  <block id="bc5a94d13573ba35693929cfc2df5614" category="list-text">k8s.io/sig-storage / csi快照記錄：v6.2.1</block>
-  <block id="938a05d206d8fc8b1d8a4342f0a74da0" category="list-text">k8s.io/sig-storage / csi節點驅動程式登錄程式：v2.70</block>
-  <block id="f4be622ffc379faa9b3471e5e49fce94" category="list-text">NetApp/Trident營運者：23.01.1（選用）</block>
   <block id="681d715b456f6d29a501b8f132e941a1" category="cell">1.22.0版</block>
   <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">1.23.0版</block>
   <block id="468bc1e7f7712a8dc9b91d063523cdff" category="cell">1.24.0版</block>
@@ -3663,4 +3655,12 @@
   <block id="a20f982d79c3dd66d244ffe0f7d940ee" category="sidebar">最佳實務做法與建議</block>
   <block id="c91cf7abea9584bc1edbc8ff4948ada0" category="sidebar">Astra Trident整合</block>
   <block id="301ebdf8067a213d5a55c65fbb488290" category="sidebar">安全性建議</block>
+  <block id="b3534e74dc10f418e0acfdf3093d680b" category="list-text">Docker 。 IO/NetApp/Trident ： 23.01.1</block>
+  <block id="63085189271321ffdf59de5eb4e59b39" category="list-text">Docker 。 IO/NetApp/trident 自動支援： 23.01</block>
+  <block id="fbfd5a483c063bc4dafdef424b728e8c" category="list-text">registry ． k8s.io/SIG-storage / csi 置備程序： v3.4.0</block>
+  <block id="f148bc976a65950b788a09a64888f0cd" category="list-text">登錄 .k8s.io/SIG-storage / csi 附加程式： v4.1.0</block>
+  <block id="42b4a2f67addae58772b1c250a251f7e" category="list-text">登錄 .k8s.io/SIG-storage / csi 大小調整： v1.7.0</block>
+  <block id="6171b5857bec22984fe260652936c7b1" category="list-text">登錄 .k8s.IO/SIG-storage / csi 快照機： v6.2.1</block>
+  <block id="87cd48d9616779fe4d3afb72f325eb12" category="list-text">登錄 .k8s.io/SIG-storage / csi 節點驅動程式登錄器： v2.2.0</block>
+  <block id="89580d488bd15aaf8753d0a85ab09cb0" category="list-text">Docker 。 IO/NetApp/Trident 營運商： 23.01.1 （選用）</block>
 </blocks>
