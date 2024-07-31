@@ -299,11 +299,11 @@ CHAP驗證（驗證啟動器是否為預定的Volume使用者）僅支援帳戶�
 
 *應用程式最佳實務做法資訊*
 
-* https://www.netapp.com/us/media/tr-4722.pdf["MySQL ONTAP 的最佳實務做法"^]
+* https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html["MySQL ONTAP 的最佳實務做法"^]
 * https://www.netapp.com/pdf.html?item=/media/10510-tr-4605.pdf["MySQL SolidFire 的最佳實務做法"^]
-* http://www.netapp.com/us/media/tr-4635.pdf["NetApp SolidFire 的功能與Cassandra"^]
-* http://www.netapp.com/us/media/tr-4606.pdf["Oracle SolidFire 的最佳實務做法"^]
-* http://www.netapp.com/us/media/tr-4610.pdf["PostgreSQL SolidFire 的最佳實務做法"^]
+* https://www.netapp.com/pdf.html?item=/media/10513-tr-4635pdf.pdf["NetApp SolidFire 的功能與Cassandra"^]
+* https://www.netapp.com/pdf.html?item=/media/10511-tr4606pdf.pdf["Oracle SolidFire 的最佳實務做法"^]
+* https://www.netapp.com/pdf.html?item=/media/10512-tr-4610pdf.pdf["PostgreSQL SolidFire 的最佳實務做法"^]
 
 
 並非所有應用程式都有特定的準則、請務必與您的NetApp團隊合作並使用 https://www.netapp.com/search/["NetApp資料庫"^] 以尋找最新的文件。
