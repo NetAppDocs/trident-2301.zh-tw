@@ -45,7 +45,7 @@ SVM管理有多種選項可供選擇：
 
 在每種情況下、介面都應該位於DNS中、而且在設定Trident時、應該使用DNS名稱。這有助於推動一些DR案例、例如不使用網路身分保留功能的SVM-DR。
 
-不過、您並不偏好為SVM設定專屬或共享的管理LIF、不過您應該確保網路安全性原則符合您選擇的方法。無論如何、管理LIF都應透過DNS存取、以達到最大的靈活度 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/GUID-B9E36563-1C7A-48F5-A9FF-1578B99AADA9.html["SVM-DR"^] 與Trident搭配使用。
+不過、您並不偏好為SVM設定專屬或共享的管理LIF、不過您應該確保網路安全性原則符合您選擇的方法。無論如何、管理 LIF 應可透過 DNS 存取、以提供最大的靈活度 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-svm-replication-concept.html["SVM-DR"^]、並搭配 Trident 一起使用。
 
 
 
@@ -88,7 +88,7 @@ vserver modify -vserver <svm_name> -max-volumes <num_of_volumes>
 
 === 建立並使用SVM QoS原則
 
-運用ONTAP 套用至SVM的SVM的SQoS原則、限制Trident佈建磁碟區所耗用的IOPS數量。這對我們有幫助 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-perf-mon/GUID-77DF9BAF-4ED7-43F6-AECE-95DFB0680D2F.html?cp=7_1_2_1_2["預防欺凌"^] 或失控的容器、避免影響Trident SVM以外的工作負載。
+運用ONTAP 套用至SVM的SVM的SQoS原則、限制Trident佈建磁碟區所耗用的IOPS數量。這有助於 https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["預防欺凌"^]或無法控制容器、避免影響 Trident SVM 以外的工作負載。
 
 您可以在幾個步驟中建立SVM的QoS原則。如ONTAP 需最準確的資訊、請參閱您的版次更新文件。以下範例建立QoS原則、將SVM可用的總IOPS限制為5000。
 
@@ -118,7 +118,7 @@ IMPORTANT: 如果您的版本早於ONTAP 9.8、您應該將QoS原則群組指派
 
 === 為Trident建立QoS原則群組
 
-服務品質（QoS）可確保關鍵工作負載的效能不會因競爭工作負載而降級。支援QoS原則群組的QoS選項可用於磁碟區、並可讓使用者定義一或多個工作負載的處理量上限。ONTAP如需QoS的詳細資訊、請參閱 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-perf-mon/GUID-77DF9BAF-4ED7-43F6-AECE-95DFB0680D2F.html["保證QoS的處理量"^]。您可以在後端或儲存資源池中指定QoS原則群組、並將其套用至該資源池或後端中建立的每個磁碟區。
+服務品質（QoS）可確保關鍵工作負載的效能不會因競爭工作負載而降級。支援QoS原則群組的QoS選項可用於磁碟區、並可讓使用者定義一或多個工作負載的處理量上限。ONTAP如需 QoS 的詳細資訊，請參閱 https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["保證QoS的處理量"^]。您可以在後端或儲存資源池中指定QoS原則群組、並將其套用至該資源池或後端中建立的每個磁碟區。
 
 包含兩種QoS原則群組：傳統和可調適。ONTAP傳統原則群組可在IOPS中提供最大（或最小）的單位處理量（在較新版本中）。調適性QoS會自動將處理量調整至工作負載大小、並隨著工作負載大小變更、維持IOPS與TBs的比率。當您在大型部署中管理數百個或數千個工作負載時、這項優勢就相當顯著。
 
@@ -152,7 +152,7 @@ storage:
 * 您應該為每個Volume套用原則群組、以便每個Volume都能獲得原則群組指定的整個處理量。不支援共用原則群組。
 
 
-如需QoS原則群組的詳細資訊、請參閱 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-980/TOC__qos.html["Sof 9.8 QoS命令ONTAP"^]。
+如需 QoS 原則群組的詳細資訊，請參閱 https://docs.netapp.com/us-en/ontap-cli-98/index.html["Sof 9.8 QoS命令ONTAP"^]。
 
 
 
@@ -282,8 +282,8 @@ CHAP驗證（驗證啟動器是否為預定的Volume使用者）僅支援帳戶�
 *《*》ONTAP
 
 * https://www.netapp.com/us/media/tr-4067.pdf["NFS最佳實務與實作指南"^]
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["SAN管理指南"^] （適用於iSCSI）
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-rhel-cg/home.html["適用於RHEL的iSCSI Express組態"^]
+* https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN 儲存管理"^]（適用於 iSCSI ）
+* https://docs.netapp.com/us-en/ontap/san-admin/provision-storage.html["適用於RHEL的iSCSI Express組態"^]
 
 
 *元件軟體*

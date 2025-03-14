@@ -165,10 +165,6 @@
   <block id="fdd380631ba8063e7b8f842282a01e40" category="list-text"><block ref="fdd380631ba8063e7b8f842282a01e40" category="inline-link-rx"></block></block>
   <block id="4af8991c21dff2f779496b8350d1124b" category="inline-link">Astra Trident 22.01</block>
   <block id="7669b0b69333e81c7c208aea3d1a3c6f" category="list-text"><block ref="7669b0b69333e81c7c208aea3d1a3c6f" category="inline-link-rx"></block></block>
-  <block id="cce172403b73af5c2a4e93081affcc7f" category="inline-link">Astra Trident 21.10</block>
-  <block id="606b9e83fb467a43b3065d4fd5037094" category="list-text"><block ref="606b9e83fb467a43b3065d4fd5037094" category="inline-link-rx"></block></block>
-  <block id="a93e9e44b7a375a4236260f5ff2b251e" category="inline-link">Astra Trident 21.07</block>
-  <block id="3830d427e146a8a64454dc373d9b1502" category="list-text"><block ref="3830d427e146a8a64454dc373d9b1502" category="inline-link-rx"></block></block>
   <block id="b928e0aee19c1e2cc91c85e8a0856936" category="summary">請使用此處提供的指標來疑難排解安裝及使用Astra Trident時可能遇到的問題。</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="doc">疑難排解</block>
   <block id="8ef0ab9bbedaa7608c9abed7c7213218" category="admonition">如需Astra Trident的協助、請使用建立支援套裝組合<block ref="1d41e2024c69110ad6054ffc785ca8e0" prefix=" " category="inline-code"></block> 並傳送至<block ref="da34ca64df3f236a423516102d4096c2" prefix=" " category="inline-code"></block>。</block>
@@ -1977,7 +1973,6 @@
   <block id="7eb620c879218a348ba0e9afaedf6b01" category="paragraph">檔案系統是Amazon FSX的主要資源、類似ONTAP 於內部部署的一個叢集。在每個SVM中、您可以建立一個或多個磁碟區、這些磁碟區是儲存檔案系統中檔案和資料夾的資料容器。有了Amazon FSX for NetApp ONTAP 的功能、Data ONTAP 即可在雲端以託管檔案系統的形式提供支援。新的檔案系統類型稱為* NetApp ONTAP Sing*。</block>
   <block id="1e6c7220f5d4eb181d67b4d5043336f5" category="paragraph">使用Astra Trident搭配Amazon FSX for NetApp ONTAP 供應NetApp時、您可以確保在Amazon Elastic Kubernetes Service（EKS）中執行的Kubernetes叢集、能夠配置區塊和檔案以ONTAP 支援的持續磁碟區。</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="inline-link">FabricPool</block>
-  <block id="d07e2d99267e4fc3c508f6701be977b4" category="paragraph">適用於NetApp ONTAP 的Amazon FSX<block ref="d1584952da6bdedb0a24d5dbd43ce0bf" category="inline-link-rx"></block> 管理儲存層。它可讓您根據資料是否經常存取、將資料儲存在一個層級中。</block>
   <block id="9b85b10750f4b0e98b7853ee468d8bd5" category="list-text">SMB Volume：</block>
   <block id="cf201a9e802aa6e35997590206919b1a" category="list-text">使用支援SMB磁碟區<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 僅限驅動程式。</block>
   <block id="b184cfad0a2d14c9220db3d72006958c" category="list-text">在啟用自動備份的Amazon FSX檔案系統上建立的磁碟區、無法由Trident刪除。若要刪除PVCs、您需要手動刪除PV和FSXfor ONTAP the Sesfvolume。若要避免此問題：</block>
@@ -2949,10 +2944,8 @@
   <block id="3225a41cc13787a78ef89153b870bffe" category="section-title">使用ONTAP 功能複寫資料</block>
   <block id="5bec6ef5bd67015d1da2f04dc2a24b80" category="paragraph">複寫資料對於防止儲存陣列故障所造成的資料遺失、扮演著重要的角色。</block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">本文檔 ONTAP</block>
-  <block id="40491088e02d790071b9ddbc3f95f983" category="admonition">如需ONTAP 深入瞭解有關資訊複寫技術的資訊、請參閱<block ref="dd7cb2553dd5eb568b9a23ce332fc9a4" category="inline-link-rx"></block>。</block>
   <block id="541959f741a3180066a37aee2adf7d01" category="section-title">SnapMirror儲存虛擬機器（SVM）複寫</block>
   <block id="794cb725c5631ad99b5b7c000307f0df" category="inline-link">SnapMirror</block>
-  <block id="15bf9c06ed0c503c4ee904bf4b3a85a9" category="paragraph">您可以使用<block ref="a2a4907c93db22784422a1bc7047ac73" category="inline-link-rx"></block> 複寫完整的SVM、其中包括其組態設定及其磁碟區。發生災難時、您可以啟動SnapMirror目的地SVM、開始提供資料服務。還原系統時、您可以切換回主要系統。</block>
   <block id="8657190fa7a98fbc200c5c90a08cac65" category="paragraph">Astra Trident無法自行設定複寫關係、因此儲存管理員可以使用ONTAP的SnapMirror SVM複寫功能、將磁碟區自動複寫到災難恢復（DR）目的地。</block>
   <block id="bdb161b363522f5fc614f70c10792020" category="paragraph">如果您打算使用SnapMirror SVM複寫功能、或是目前正在使用此功能、請考慮下列事項：</block>
   <block id="34fb9af35ab36a2cead16ad98b140441" category="list-text">您應該為每個啟用SVM災難恢復的SVM建立不同的後端。</block>
@@ -2981,7 +2974,6 @@
   <block id="19f60a36276037e5b82b5096d2ba7a5c" category="paragraph">以下是ONTAP 關於SnapMirror Volume複寫設定步驟的總覽：</block>
   <block id="c4e9d0a10c58301ad78e9e9bf74f9229" category="list-text">在磁碟區所在的叢集與從磁碟區提供資料的SVM之間設定對等關係。</block>
   <block id="b1c132fa6284fd6d42f93781032cd962" category="list-text">建立SnapMirror原則、以控制關係的行為、並指定該關係的組態屬性。</block>
-  <block id="0a30bcd5b223c18be449821765a8ec07" category="list-text">使用建立目的地Volume與來源Volume之間的SnapMirror關係<block ref="258f1c896a75717167dfde7733d463a3" category="inline-link-rx"></block><block ref="f95e5ae9c757f4c65e42842a276ea620" prefix="[" category="inline-code"></block> 命令^]並指派適當的SnapMirror原則。</block>
   <block id="20872623d19783e0dbe00afcdcb9ba46" category="list-text">建立SnapMirror關係之後、請初始化關係、以便完成從來源磁碟區到目的地磁碟區的基礎傳輸。</block>
   <block id="af1fe101ed84f2b2bc465f0a9e92a35f" category="image-alt">顯示SnapMirror Volume複寫設定。</block>
   <block id="1d3ec4cce0f34c07e814ebbd88f5edd8" category="section-title">適用於Trident的SnapMirror Volume災難恢復工作流程</block>
@@ -3281,7 +3273,6 @@
   <block id="2bf2fa2c1c3a6e10095db72759cc9983" category="list-text">與NFS資料介面共用管理角色。</block>
   <block id="5cf4c2e89b362842d77f4e4209c4ef99" category="paragraph">在每種情況下、介面都應該位於DNS中、而且在設定Trident時、應該使用DNS名稱。這有助於推動一些DR案例、例如不使用網路身分保留功能的SVM-DR。</block>
   <block id="6a392b5e005fffe32231c94dc96a1605" category="inline-link">SVM-DR</block>
-  <block id="2b4a6ee2db063653d6076884295a3854" category="paragraph">不過、您並不偏好為SVM設定專屬或共享的管理LIF、不過您應該確保網路安全性原則符合您選擇的方法。無論如何、管理LIF都應透過DNS存取、以達到最大的靈活度<block ref="f5e9502989ce78934689806ebb69606a" category="inline-link-rx"></block> 與Trident搭配使用。</block>
   <block id="4a0ee008d3379206a925ade3a9e707dd" category="section-title">限制最大Volume數</block>
   <block id="e5e09031843479ef9ef8cbbd4c2f404c" category="inline-link">NetApp Hardware Universe</block>
   <block id="400a5d259a812effb5b7df506bf020ef" category="paragraph">根據軟體版本和硬體平台、系統可提供最大的Volume數。ONTAP請參閱<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> 針對您的特定平台和ONTAP 版本、決定確切的限制。當磁碟區數用盡時、資源配置作業不僅會針對Trident、也會針對所有儲存要求失敗。</block>
@@ -3300,7 +3291,6 @@
   <block id="8b7c80a4394c7e64aa891100d57a755f" category="paragraph">您可以在後端定義中指定CHAP啟動器和目標使用者名稱和密碼、並在SVM上啟用Trident啟用CHAP。使用<block ref="099cb468880f266cba40b49391fa46bc" prefix=" " category="inline-code"></block> 後端組態中的參數、Trident會驗證iSCSI連線ONTAP 、以CHAP作為後端。Trident 20.04及更新版本提供雙向CHAP支援。</block>
   <block id="2596e59ce5cd0d1b0066656f191365d0" category="section-title">建立並使用SVM QoS原則</block>
   <block id="560417d4f795b7e1176a40db8e4ccca8" category="inline-link">預防欺凌</block>
-  <block id="4870168b0713fe3089cf587858fc3b40" category="paragraph">運用ONTAP 套用至SVM的SVM的SQoS原則、限制Trident佈建磁碟區所耗用的IOPS數量。這對我們有幫助<block ref="1b59d76842e8b78d6111d3e73e9cd404" category="inline-link-rx"></block> 或失控的容器、避免影響Trident SVM以外的工作負載。</block>
   <block id="d6ab867679686745d96bea839929a6de" category="paragraph">您可以在幾個步驟中建立SVM的QoS原則。如ONTAP 需最準確的資訊、請參閱您的版次更新文件。以下範例建立QoS原則、將SVM可用的總IOPS限制為5000。</block>
   <block id="c790de304b7ca0097f2133cf9da4e657" category="paragraph">此外、如果ONTAP 您的版本支援此功能、您可以考慮使用QoS下限來保證容器化工作負載的處理量。調適性QoS與SVM層級原則不相容。</block>
   <block id="38c0b69f6b2ee691e1ba568134513414" category="paragraph">容器化工作負載專用的IOPS數量取決於許多層面。其中包括：</block>
@@ -3310,13 +3300,11 @@
   <block id="ac2167b1e02d575eb6ddfe4e58f5cdcf" category="admonition">如果您的版本早於ONTAP 9.8、您應該將QoS原則群組指派給SVM * Only *。</block>
   <block id="9992cae6c17055c750a849c5f6135eb2" category="section-title">為Trident建立QoS原則群組</block>
   <block id="76a3e54f72b3a7224429f111e58f836c" category="inline-link">保證QoS的處理量</block>
-  <block id="edb2313b52b4c42008f0531bd6a05e49" category="paragraph">服務品質（QoS）可確保關鍵工作負載的效能不會因競爭工作負載而降級。支援QoS原則群組的QoS選項可用於磁碟區、並可讓使用者定義一或多個工作負載的處理量上限。ONTAP如需QoS的詳細資訊、請參閱<block ref="721a1778a2025ec5868484b3888c0186" category="inline-link-rx"></block>。您可以在後端或儲存資源池中指定QoS原則群組、並將其套用至該資源池或後端中建立的每個磁碟區。</block>
   <block id="0394fb1288eac4cd3d40bcd991e079e9" category="paragraph">包含兩種QoS原則群組：傳統和可調適。ONTAP傳統原則群組可在IOPS中提供最大（或最小）的單位處理量（在較新版本中）。調適性QoS會自動將處理量調整至工作負載大小、並隨著工作負載大小變更、維持IOPS與TBs的比率。當您在大型部署中管理數百個或數千個工作負載時、這項優勢就相當顯著。</block>
   <block id="f5acc65a21daed9bb8e91cb5cdd0ae52" category="paragraph">建立QoS原則群組時、請考量下列事項：</block>
   <block id="6d5fcf300cd9e9239c26ce37b0919fca" category="list-text">您應該設定<block ref="36c38058d66835923c982c773a817f0b" prefix=" " category="inline-code"></block> 鍵入<block ref="a4a918a45181164207929d52aec36aec" prefix=" " category="inline-code"></block> 後端組態區塊。請參閱下列後端組態範例：</block>
   <block id="32160c2368452bf7d86bcffae7f142be" category="list-text">您應該為每個Volume套用原則群組、以便每個Volume都能獲得原則群組指定的整個處理量。不支援共用原則群組。</block>
   <block id="b2365e059850d5e32885189655bf469c" category="inline-link">Sof 9.8 QoS命令ONTAP</block>
-  <block id="23225608cf33a6c6a4aec9126514b0e1" category="paragraph">如需QoS原則群組的詳細資訊、請參閱<block ref="40468e984a92fba9003857701268163a" category="inline-link-rx"></block>。</block>
   <block id="d5d2a5bc92eea85a4dd11a642ed8a170" category="section-title">限制Kubernetes叢集成員存取儲存資源</block>
   <block id="0f2b74d1b972675eb3d4efe7d8c3ed16" category="paragraph">限制存取Trident所建立的NFS磁碟區和iSCSI LUN、是Kubernetes部署安全態勢的重要元件。這樣做可防止非Kubernetes叢集一部分的主機存取磁碟區、並可能意外修改資料。</block>
   <block id="9602ec8691c1a564016f9fd8086139f1" category="paragraph">請務必瞭解命名空間是Kubernetes中資源的邏輯邊界。假設相同命名空間中的資源可以共用、但重要的是、沒有跨命名空間功能。這表示即使PV是全域物件、但只有在同一個命名空間中的Pod才能存取它們。*確保命名空間在適當時用於提供分隔是非常重要的。*</block>
@@ -3370,10 +3358,7 @@
   <block id="d911b17f4f4cdcca62a04ad77aa9403d" category="paragraph">*《*》ONTAP</block>
   <block id="f9dd52d280693dc59e53b6e1fb7bd801" category="inline-link">NFS最佳實務與實作指南</block>
   <block id="40bb23d54df7f59219c18f15a346d9e5" category="list-text"><block ref="40bb23d54df7f59219c18f15a346d9e5" category="inline-link-rx"></block></block>
-  <block id="a76193f5d9397d9c49ca283a20ccf649" category="inline-link">SAN管理指南</block>
-  <block id="5bc9b097037d45aff954bf9bd632d4a4" category="list-text"><block ref="c745f55eb0c9991966e63f0608541bb1" category="inline-link-rx"></block> （適用於iSCSI）</block>
   <block id="5ca34d6ffc2a555b689542e3fbeeb7af" category="inline-link">適用於RHEL的iSCSI Express組態</block>
-  <block id="36588ac65dcdb9b93916fb0ab708edb3" category="list-text"><block ref="36588ac65dcdb9b93916fb0ab708edb3" category="inline-link-rx"></block></block>
   <block id="ca7ab5ec4cba84fbef55956bb38759ce" category="paragraph">*元件軟體*</block>
   <block id="e809d9f88c2933195c4d2ab379c1b5dc" category="inline-link">設定SolidFire 適用於Linux的功能</block>
   <block id="ce0470e08aa854a8f93fa119434e8422" category="list-text"><block ref="ce0470e08aa854a8f93fa119434e8422" category="inline-link-rx"></block></block>
@@ -3645,4 +3630,15 @@
   <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
   <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport 無法收集或傳輸個人識別資訊（PII）或個人資訊。隨附<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> 不適用於 Trident 容器映像本身的。您可以深入瞭解 NetApp 對資料安全與信任的承諾<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>。</block>
   <block id="5ff83dbc70e496ea22b38ea61bb69f05" category="list-text">觀看上的示範 <block ref="c27441bbbe62adf51ae6ecec41fde8bd" category="inline-link-macro-rx"></block>。</block>
+  <block id="255535dbf7d8ccd159617f72fbac143a" category="admonition">若要深入瞭解 ONTAP 複寫技術，請參閱<block ref="b50e7898b1bbe9f38d3e2dadf141f9a2" category="inline-link-rx"></block>。</block>
+  <block id="93fc82fb23dbe2c7e07eeabc532512f9" category="paragraph">您可以使用<block ref="46aaa080c7dea38274d1081434d9c6a5" category="inline-link-rx"></block>複寫完整的 SVM ，其中包括其組態設定及其磁碟區。發生災難時、您可以啟動SnapMirror目的地SVM、開始提供資料服務。還原系統時、您可以切換回主要系統。</block>
+  <block id="851249eba9a8950ad23be411243b0051" category="list-text">使用命令 ^] 在目的地 Volume 和來源 Volume 之間建立 SnapMirror 關係<block ref="9abded142388603a68b370f178e17079" category="inline-link-rx"></block><block ref="f95e5ae9c757f4c65e42842a276ea620" prefix="[" category="inline-code"></block>，並指派適當的 SnapMirror 原則。</block>
+  <block id="e2a60851073d94712e2b2036fd5d8156" category="paragraph">不過、您並不偏好為SVM設定專屬或共享的管理LIF、不過您應該確保網路安全性原則符合您選擇的方法。無論如何、管理 LIF 應可透過 DNS 存取、以提供最大的靈活度<block ref="3ce2f4ed71c5363b92cf0a3a7ce9ccd4" category="inline-link-rx"></block>、並搭配 Trident 一起使用。</block>
+  <block id="179fa19c132de88b492e8d197035a2fc" category="paragraph">運用ONTAP 套用至SVM的SVM的SQoS原則、限制Trident佈建磁碟區所耗用的IOPS數量。這有助於<block ref="dd5ad8e93c7ec5f1a9057d91e0284eb6" category="inline-link-rx"></block>或無法控制容器、避免影響 Trident SVM 以外的工作負載。</block>
+  <block id="34d6f025c38ca8c29501214410cd8534" category="paragraph">服務品質（QoS）可確保關鍵工作負載的效能不會因競爭工作負載而降級。支援QoS原則群組的QoS選項可用於磁碟區、並可讓使用者定義一或多個工作負載的處理量上限。ONTAP如需 QoS 的詳細資訊，請參閱<block ref="3cb8b8ac2e6e9408ae34f3020e1a4922" category="inline-link-rx"></block>。您可以在後端或儲存資源池中指定QoS原則群組、並將其套用至該資源池或後端中建立的每個磁碟區。</block>
+  <block id="017eece5f4fe8b15539ed1aac4ca4882" category="paragraph">如需 QoS 原則群組的詳細資訊，請參閱<block ref="d4a1f31eba6ed7ce57f4855a352cdbf9" category="inline-link-rx"></block>。</block>
+  <block id="3097ad2af11c180c3e0a96a78dfe1685" category="inline-link">SAN 儲存管理</block>
+  <block id="fbdb7b9989274c767d8bb0b4fb5e5c44" category="list-text"><block ref="80a60aef6642b0371d56935a111a1af9" category="inline-link-rx"></block>（適用於 iSCSI ）</block>
+  <block id="c748d49380c59e7b313f579abd525aca" category="list-text"><block ref="c748d49380c59e7b313f579abd525aca" category="inline-link-rx"></block></block>
+  <block id="bfe205fb40c84219c58294b919b0802b" category="paragraph">Amazon FSX for NetApp ONTAP 用於<block ref="100bdb811c1b823e066dd7c237e74575" category="inline-link-rx"></block>管理儲存層。它可讓您根據資料是否經常存取、將資料儲存在一個層級中。</block>
 </blocks>

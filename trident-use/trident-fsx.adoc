@@ -18,7 +18,7 @@ https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon
 
 使用Astra Trident搭配Amazon FSX for NetApp ONTAP 供應NetApp時、您可以確保在Amazon Elastic Kubernetes Service（EKS）中執行的Kubernetes叢集、能夠配置區塊和檔案以ONTAP 支援的持續磁碟區。
 
-適用於NetApp ONTAP 的Amazon FSX https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-5A78F93F-7539-4840-AB0B-4A6E3252CF84.html["FabricPool"^] 管理儲存層。它可讓您根據資料是否經常存取、將資料儲存在一個層級中。
+Amazon FSX for NetApp ONTAP 用於 https://docs.netapp.com/us-en/ontap/fabricpool/index.html["FabricPool"^]管理儲存層。它可讓您根據資料是否經常存取、將資料儲存在一個層級中。
 
 
 
